@@ -41,7 +41,6 @@
                   <%
 
                        while(itr.hasNext()) {
-                           out.println("<form name=\"RemoveFromCartController\" method=\"post\" action=\"RemoveFromCartController\">");
                            cart  = itr.next();
                            out.println("<tr>");
                            out.println("<td hidden style='text-align: center;'><input class=\"form-control\" type=\"number\" name=\"cartId\" value=" + cart.getCartid() + "></input></td>");
@@ -51,7 +50,6 @@
                            out.println("<td style='text-align: center;'> "+ cart.getDvdid().getPrice() + "</td>");
                            out.println("<td style='text-align: center;'> "+ cart.getQuantity() + "</td>");
                            out.println("<tr>");
-                           out.println("</form>");
                        }
 
                   %>
