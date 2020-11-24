@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>DVD Shopping Check Out Cart</title>
     </head>
-    <jsp:useBean id="cart" class="model.Cart" scope="request"/>
+    <jsp:useBean id="checkout" class="model.Cart" scope="request"/>
      <%        
             List<Cart> cartList = CartTable.findAllCart();
             Iterator<Cart> itr = cartList.iterator();
@@ -41,14 +41,14 @@
                   <%
 
                        while(itr.hasNext()) {
-                           cart  = itr.next();
+                           checkout  = itr.next();
                            out.println("<tr>");
-                           out.println("<td hidden style='text-align: center;'><input class=\"form-control\" type=\"number\" name=\"cartId\" value=" + cart.getCartid() + "></input></td>");
-                           out.println("<td style='text-align: center;'> "+ cart.getDvdid().getDvdname() + "</td>");
-                           out.println("<td style='text-align: center;'> "+ cart.getDvdid().getRate() + "</td>");
-                           out.println("<td style='text-align: center;'> "+ cart.getDvdid().getYears() + "</td>");
-                           out.println("<td style='text-align: center;'> "+ cart.getDvdid().getPrice() + "</td>");
-                           out.println("<td style='text-align: center;'> "+ cart.getQuantity() + "</td>");
+                           out.println("<td hidden style='text-align: center;'><input class=\"form-control\" type=\"number\" name=\"cartId\" value=" + checkout.getCartid() + "></input></td>");
+                           out.println("<td style='text-align: center;'> "+ checkout.getDvdid().getDvdname() + "</td>");
+                           out.println("<td style='text-align: center;'> "+ checkout.getDvdid().getRate() + "</td>");
+                           out.println("<td style='text-align: center;'> "+ checkout.getDvdid().getYears() + "</td>");
+                           out.println("<td style='text-align: center;'> "+ checkout.getDvdid().getPrice() + "</td>");
+                           out.println("<td style='text-align: center;'> "+ checkout.getQuantity() + "</td>");
                            out.println("<tr>");
                        }
 
